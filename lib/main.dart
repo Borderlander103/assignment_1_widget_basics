@@ -5,33 +5,33 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-
     return _MyAppState();
   }
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Test Title',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Widget & Basics'),
+          leading: Icon(Icons.hot_tub),
+          backgroundColor: Color(0xFF8B1122),
         ),
-        body: Column(
-          children: [
-            Container(
-              child: RaisedButton(
-                onPressed: () {
-                  print("[MyAppState] onPressed");
-                },
-                child: Text('Press Me!'),
-              )
-            )
-          ]
-        )
-      )
+        body: Center(
+          child: Column(
+            children: [
+              Text('test text'),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Press Here!'),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
