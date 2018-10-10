@@ -5,7 +5,6 @@ import './texts.dart';
 class TextManager extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _TextManagerState();
   }
 }
@@ -13,7 +12,7 @@ class TextManager extends StatefulWidget {
 class _TextManagerState extends State<TextManager> {
   static int index = 0;
 
-  String myText = myTexts[index];
+  String _myText = myTexts[index];
 
   static var myTexts = [
     '',
@@ -36,7 +35,7 @@ class _TextManagerState extends State<TextManager> {
                 } else {
                   index = 0;
                 }
-                myText = myTexts[index];
+                _myText = myTexts[index];
               });
             },
             child: Text('Press Here!'),
@@ -47,7 +46,7 @@ class _TextManagerState extends State<TextManager> {
             elevation: 20.0,
             splashColor: Colors.red,
           ),
-          Texts(myText)
+          Texts(_myText)
         ],
       ),
     );
