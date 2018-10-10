@@ -24,14 +24,29 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(myText),
+              Text('How am I feeling? \n\n' + myText,
+              style: TextStyle(fontSize: 20.0,
+                fontStyle: FontStyle.italic,
+                color: Color(0xFF8B1122)
+              ),
+              ),
               RaisedButton(
                 onPressed: () {
                   setState(() {
-                    myText = "Goodbye cruel world.";
+                    if (index <= 3) {
+                      index = index + 1;
+                    } else {
+                      index = 0;
+                    }
+                    myText = myTexts[index];
                   });
                 },
                 child: Text('Press Here!'),
+                textColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                color: Color(0xFF8B1122),
+                elevation: 20.0,
+                splashColor: Colors.red,
               ),
             ],
           ),
@@ -41,6 +56,10 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-String myText = "Hello World";
+int index = 0;
+
+String myText = myTexts[index];
+
+var myTexts = ['', 'Hello World  :)', 'Goodbye cruel world!  :(', 'What can\'t you just \nleave me alone!!  :\\'];
 
 
