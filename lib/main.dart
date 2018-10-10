@@ -22,10 +22,15 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('test text'),
+              Text(myText),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    myText = "Goodbye cruel world.";
+                  });
+                },
                 child: Text('Press Here!'),
               ),
             ],
@@ -35,3 +40,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+String myText = "Hello World";
+
+
